@@ -1,0 +1,151 @@
+<!-- Code from d3-graph-gallery.com -->
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Tutorial</title>
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+
+<!-- Style -->
+<style>
+  .container {font-family: Arial; width: 50%;}
+  #footnotes {font-size: 12px;}
+</style>
+
+<div class="container">
+  <!-- Create a div where the graph will take place -->
+  <div id="my_dataviz">
+    <h2>Water Quality in Canadian Rivers – Regional Water Quality, Canada</h2>
+  </div>
+  <div>
+    <p>The Canadian Environmental Sustainability Indicators (CESI) program provides data and information to track Canada's performance on key environmental sustainability issues. The Water quality in Canadian rivers indicators provide a measure of the ability of river water across Canada to support plants and animals. At each monitoring site, water quality data are compared to water quality guidelines to create a rating for the site. If measured water quality is below the guidelines, it can maintain a healthy ecosystem. Water quality at a monitoring site is considered excellent when parameters in a river very rarely exceed their guidelines. Conversely, water quality is rated poor when parameters usually exceed their guidelines, sometimes by a wide margin. These indicators provide information about the state of surface water quality and its change through time, to support water resource management. Information is provided to Canadians in a number of formats including: static and interactive maps, charts and graphs, HTML and CSV data tables and downloadable reports. See the supplementary documentation for the data sources and details on how the data were collected and how the indicator was calculated.</p>
+  </div>
+  <div id="footnotes">
+    <p>Source: <a href="https://open.canada.ca/data/en/dataset/14a7c297-ae5a-4e92-ace5-9ea7d2125bfa">Canada Open Data Portal</a></p>
+    <p>Data assembled by Environment and Climate Change Canada from federal, provincial, territorial and joint water quality monitoring programs. Available on the Environmental indicators website (www.canada.ca/environmental-indicators).</p>
+    <p>Note: For the regional indicator, water quality was assessed at 194 sites across Canada using the Canadian Council of Ministers of the Environment's water quality index (www.ccme.ca/en/resources/canadian_environmental_quality_guidelines/calculators.html). Compared to the national indicator, the Regional water quality in Canadian rivers indicator uses 19 additional monitoring sites to improve the coverage of the northern portions of the Mackenzie River and Pacific Ocean regions. Percentages may not add up to 100 due to rounding.</p>
+  </div>
+</div>
+
+<script>
+
+// set the dimensions and margins of the graph
+var margin = {top: 10, right: 30, bottom: 20, left: 50},
+    width = 850 - margin.left - margin.right,
+    height = 600 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+var svg = d3.select("#my_dataviz")
+  .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+// Parse the Data
+//d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_stacked.csv", function(data) {
+d3.csv("https://raw.githubusercontent.com/juliaseo/d3.js-uoft/main/CLEANED-water-quality-regional-en.csv", function(data) {
+
+  // List of subgroups = header of the csv files
+  var subgroups = data.columns.slice(1)
+
+  // List of groups = value of the first column called group -> I show them on the X axis
+  var groups = d3.map(data, function(d){return(d.group)}).keys()
+
+  // Add X axis
+  var x = d3.scaleBand()
+      .domain(groups)
+      .range([0, width])
+      .padding([0.3])
+  svg.append("g")
+    .attr("transform", "translate(0," + height + ")")
+    .call(d3.axisBottom(x).tickSizeOuter(0));
+
+  // Add Y axis
+  var y = d3.scaleLinear()
+    .domain([0, 60])
+    .range([ height, 0 ]);
+  svg.append("g")
+    .call(d3.axisLeft(y));
+
+  // color palette = one color per subgroup
+  var color = d3.scaleOrdinal()
+    .domain(subgroups)
+    .range(['#53BCED','#3F71B1','#038F81','#025951','#F25116'])
+
+
+  //stack the data? --> stack per subgroup
+  var stackedData = d3.stack()
+    .keys(subgroups)
+    (data)
+
+
+
+
+
+  // ----------------
+  // Create a tooltip
+  // ----------------
+  var tooltip = d3.select("#my_dataviz")
+    .append("div")
+    .style("position", "absolute")
+    .style("opacity", 0)
+    .attr("class", "tooltip")
+    .style("background-color", "white")
+    .style("border", "solid")
+    .style("border-width", "1px")
+    .style("border-radius", "5px")
+    .style("padding", "12px")
+
+  // Three function that change the tooltip when user hover / move / leave a cell
+  var mouseover = function(d) {
+    var subgroupName = d3.select(this.parentNode).datum().key;
+    var subgroupValue = d.data[subgroupName];
+    tooltip
+        .html("Quality: " + subgroupName + "<br>" + "Water Sites: " + subgroupValue)
+        .style("opacity", 1)
+    // Highlight hovered area at full opacity
+    d3.selectAll(".myRect")
+      .style("opacity", 0.3)
+      .style("transition-duration", "0.5s")
+    // Highlight all rects of this subgroup with opacity 1. It is possible to select them since they have a specific class = their name.
+    d3.selectAll("."+subgroupName)
+      .style("opacity", 1)
+  }
+  var mousemove = function(d) {
+    tooltip
+      .style("left", (d3.mouse(this)[0]+90) + "px") // It is important to put the +90: other wise the tooltip is exactly where the point is an it creates a weird effect
+      .style("top", (d3.mouse(this)[1]) + "px")
+  }
+  var mouseleave = function(d) {
+    tooltip
+      .style("opacity", 0)
+    // Highlight back to normal when you leave
+    d3.selectAll(".myRect")
+      .style("opacity",1)
+  }
+
+
+  // Show the bars
+  svg.append("g")
+    .selectAll("g")
+    // Enter in the stack data = loop key per key = group per group
+    .data(stackedData)
+    .enter().append("g")
+      .attr("fill", function(d) { return color(d.key); })
+      .attr("class", function(d){ return "myRect " + d.key }) // Add a class to each subgroup: their name
+      .selectAll("rect")
+      // enter a second time = loop subgroup per subgroup to add all rectangles
+      .data(function(d) { return d; })
+      .enter().append("rect")
+        .attr("x", function(d) { return x(d.data.group); })
+        .attr("y", function(d) { return y(d[1]); })
+        .attr("height", function(d) { return y(d[0]) - y(d[1]); })
+        .attr("width",x.bandwidth())
+        .on("mouseover", mouseover)
+        .on("mousemove", mousemove)
+        .on("mouseleave", mouseleave)
+})
+
+</script>
