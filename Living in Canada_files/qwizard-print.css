@@ -1,0 +1,68 @@
+﻿/** Outside QWizard Selections to Mod **/
+/** print section start****/
+-div.fip { display:none; }  /* header picture */
+-div.cwm { display:none; }  /* header picture */
+-div.banner { display:none; }  /* banner picture */
+div.navaid { display:none; }  
+div.fp { display:none; }   /* top menu */
+p.breadcrumb { display:none; } /* breadcrumb */
+div#topImage { display:none; } /* breadcrumb */
+div.break  { display:none; }
+div#bar  { display:none; }
+div#bar barRight { display:none; }
+div#body { 	margin:0px;	padding:0px;}
+div.whiteBody { margin:0px; padding:0px; }
+div#disclaimer { display:none; }
+div.whiteFooter { display:none; }
+div.smallBreak { display:none; }
+div#id="footer { display:none; }
+div.footer { display:none; }
+
+.spacer { 	clear:both; }
+
+div.wet-boew-tabbedinterface ul.tabs { display:none; }
+div#tabRT001 { display:block !important; }
+div#tabRT002 { display:block !important; }
+div#tabRT003 { display:block !important; }
+div#tabRT004 { display:block !important; }
+div#tabRT005 { display:block !important; }
+div#tabRT007 { display:block !important; }
+div#tabRT019 { display:block !important; }
+div#tabRT020 { display:block !important; }
+div#tabRT021 { display:block !important; }
+div#tabRT022 { display:block !important; }
+div#tabRT023 { display:block !important; }
+div#tabRT024 { display:block !important; }
+div#tabRT025 { display:block !important; }
+div#tabRT026 { display:block !important; }
+div#tabRT027 { display:block !important; }
+div#tabRT028 { display:block !important; }
+div#tabRT029 { display:block !important; }
+div#tabRT030 { display:block !important; }
+div#wb-head { display:none; }
+div#wb-foot { display:none; }
+
+div#tabRT001 { margin-top:0px;}
+div#tabRT002 { margin-top:20px;}
+div#tabRT003 { margin-top:20px;}
+div#tabRT004 { margin-top:20px;}
+div#tabRT005 { margin-top:20px;}
+div#tabRT006 { margin-top:20px;}
+div#tabRT007 { margin-top:20px;}
+div#tabRT020 { margin-top:20px;}
+div#tabRT019 { margin-top:20px;}
+div#tabRT021 { margin-top:20px;}
+div#tabRT022 { margin-top:20px;}
+div#tabRT023 { margin-top:20px;}
+div#tabRT024 { margin-top:20px;}
+div#tabRT025 { margin-top:20px;}
+div#tabRT026 { margin-top:20px;}
+div#tabRT027 { margin-top:20px;}
+div#tabRT028 { margin-top:20px;}
+div#tabRT029 { margin-top:20px;}
+div#tabRT030 { margin-top:20px;}
+
+header { display:none; }
+
+.b-top { display:none; }
+.b-bottom { display:none; }

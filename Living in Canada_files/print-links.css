@@ -1,0 +1,5 @@
+
+/* Print links with URLs */
+	a:link, a:visited {color: #520; background: transparent; font-weight: bold; text-decoration: underline;}
+	#wb-main a:link:after, #content a:visited:after {content: " (" attr(href) ") "; font-size: 90%;}
+	#wb-main a[href^="/"]:after {content: " (http://www.cic.gc.ca" attr(href) ") ";}

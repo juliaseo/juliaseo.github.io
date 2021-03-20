@@ -1,0 +1,144 @@
+.tabs-style-3 .tabs {
+	width:306px;
+	right:10px;
+	margin-top:0;
+}
+.tabs-style-3 .tabs-panel {
+	width:592px;
+	padding-right:20px;
+}
+.tabs-style-3 .tabs li {
+	height:36px;
+	padding:0;
+	font-size:115%;
+	position:relative;
+	opacity: 1;
+	-moz-border-radius: 0 0 0 0;
+	-webkit-border-radius: 0 0 0 0;
+	border-radius: 0 0 0 0;
+	border: 1px solid #CCC;
+	background: url(../images/tab1-m.gif) top left no-repeat;
+}
+.tabs-style-3 .tabs li.tab-start{background-image:url(../images/lct-tab-start-m.gif);}
+.tabs-style-3 .tabs li.tab-survey{background-image:url(../images/lct-tab-survey-m.gif);}
+.tabs-style-3 .tabs li.tab-canada{background-image:url(../images/lct-tab-canada-m.gif);}
+.tabs-style-3 .tabs li.tab-checklist{background-image:url(../images/lct-tab-checklist-m.gif);}
+.tabs-style-3 .tabs li.tab-citizenship{background-image:url(../images/lct-tab-citizenship-m.gif);}
+.tabs-style-3 .tabs li.tab-connect{background-image:url(../images/lct-tab-connect-m.gif);}
+.tabs-style-3 .tabs li.tab-family{background-image:url(../images/lct-tab-family-m.gif);}
+.tabs-style-3 .tabs li.tab-health{background-image:url(../images/lct-tab-health-m.gif);}
+.tabs-style-3 .tabs li.tab-housing{background-image:url(../images/lct-tab-housing-m.gif);}
+.tabs-style-3 .tabs li.tab-id{background-image:url(../images/lct-tab-id-m.gif);}
+.tabs-style-3 .tabs li.tab-language{background-image:url(../images/lct-tab-language-m.gif);}
+.tabs-style-3 .tabs li.tab-profile{background-image:url(../images/lct-tab-profile-m.gif);}
+.tabs-style-3 .tabs li.tab-refugee{background-image:url(../images/lct-tab-refugee-m.gif);}
+.tabs-style-3 .tabs li.tab-services{background-image:url(../images/lct-tab-services-m.gif);}
+.tabs-style-3 .tabs li.tab-work{background-image:url(../images/lct-tab-work-m.gif);}
+.tabs-style-3 .tabs li.tab-education{background-image:url(../images/lct-tab-education-m.gif);}
+.tabs-style-3 .tabs li.tab-money{background-image:url(../images/lct-tab-money-m.gif);}
+.tabs-style-3 .tabs li a , .tabs-style-3 .tabs li a.active, .tabs-style-3 .tabs li a:hover, .tabs-style-3 .tabs li a:focus, .tabs-style-3 .tabs li a:active {
+	margin-left:40px;
+	height:36px;
+	padding:0;
+	display:block;
+	width:auto;
+	padding:0 21px 0 21px;
+	vertical-align:middle;
+	line-height:36px;	
+	opacity: 1;
+	-moz-border-radius: 0 0 0 0;
+	-webkit-border-radius: 0 0 0 0;
+	border-radius: 0 0 0 0;
+}
+.tabs-style-3 .tabs li.active {
+	border:1px solid #cb6229;
+}
+.tabs-style-3 .tabs li span {
+	background:url(../images/arrow-orange-m.png) top left no-repeat;
+	display:none;
+	visibility:hidden;
+	height:38px;
+	width:19px;
+	position:absolute;
+	top:-1px;
+	left:-20px;
+}
+.tabs-style-3 .tabs li.active span {display:block;visibility:visible;}
+.tabs-style-3 .tabs li a.active, .tabs-style-3 .tabs li a:hover {	
+	height:36px;
+	padding:0 21px 0 21px;
+	vertical-align:middle;
+	width:auto;
+}
+.tabs-style-3 .tabs li a.active, .tabs-style-3 .tabs li a:hover {background-color:#cb6229;} /*You have this as just "background"*/
+
+@media screen and (min-width:1200px){
+	.tabs-style-3 .tabs {width:356px;}
+	.tabs-style-3 .tabs-panel {width:781px;}
+	.tabs-style-3 .tabs li span {background:url(../images/arrow-orange.png) top left no-repeat;height:47px;width:23px;left:-24px;}
+	.tabs-style-3 .tabs li {height:45px;font-size:130%;background: url(../images/tab1.gif) top left no-repeat;}
+	.tabs-style-3 .tabs li a , .tabs-style-3 .tabs li a.active, .tabs-style-3 .tabs li a:hover, .tabs-style-3 .tabs li a:focus, .tabs-style-3 .tabs li a:active {height:45px;line-height:45px;margin-left:50px;}
+	.tabs-style-3 .tabs li.tab-start{background-image:url(../images/lct-tab-start-l.gif);}
+    .tabs-style-3 .tabs li.tab-survey{background-image:url(../images/lct-tab-survey-l.gif);}
+    .tabs-style-3 .tabs li.tab-canada{background-image:url(../images/lct-tab-canada-l.gif);}
+	.tabs-style-3 .tabs li.tab-checklist{background-image:url(../images/lct-tab-checklist-l.gif);}
+	.tabs-style-3 .tabs li.tab-citizenship{background-image:url(../images/lct-tab-citizenship-l.gif);}
+	.tabs-style-3 .tabs li.tab-connect{background-image:url(../images/lct-tab-connect-l.gif);}
+	.tabs-style-3 .tabs li.tab-family{background-image:url(../images/lct-tab-family-l.gif);}
+	.tabs-style-3 .tabs li.tab-health{background-image:url(../images/lct-tab-health-l.gif);}
+	.tabs-style-3 .tabs li.tab-housing{background-image:url(../images/lct-tab-housing-l.gif);}
+	.tabs-style-3 .tabs li.tab-id{background-image:url(../images/lct-tab-id-l.gif);}
+	.tabs-style-3 .tabs li.tab-language{background-image:url(../images/lct-tab-language-l.gif);}
+	.tabs-style-3 .tabs li.tab-profile{background-image:url(../images/lct-tab-profile-l.gif);}
+	.tabs-style-3 .tabs li.tab-refugee{background-image:url(../images/lct-tab-refugee-l.gif);}
+	.tabs-style-3 .tabs li.tab-services{background-image:url(../images/lct-tab-services-l.gif);}
+	.tabs-style-3 .tabs li.tab-work{background-image:url(../images/lct-tab-work-l.gif);}
+	.tabs-style-3 .tabs li.tab-education{background-image:url(../images/lct-tab-education-l.gif);}
+	.tabs-style-3 .tabs li.tab-money{background-image:url(../images/lct-tab-money-l.gif);}
+}
+@media screen and (max-width:960px),screen and (max-device-width:960px){
+	.tabs-style-3 .tabs {width:246px;}
+	.tabs-style-3 .tabs-panel {width:458px;}
+	.tabs-style-3 .tabs li span {background:url(../images/arrow-orange-s.png) top left no-repeat;height:31px;width:16px;left:-17px;}
+	.tabs-style-3 .tabs li {height:29px;font-size:90%;background: url(../images/tab1-s.gif) top left no-repeat;}
+	.tabs-style-3 .tabs li a , .tabs-style-3 .tabs li a.active, .tabs-style-3 .tabs li a:hover, .tabs-style-3 .tabs li a:focus, .tabs-style-3 .tabs li a:active {height:29px;line-height:29px;margin-left:32px;padding:0 12px 0 12px;}
+    .tabs-style-3 .tabs li.tab-start{background-image:url(../images/lct-tab-start-s.gif);}
+    .tabs-style-3 .tabs li.tab-survey{background-image:url(../images/lct-tab-survey-s.gif);}
+	.tabs-style-3 .tabs li.tab-canada{background-image:url(../images/lct-tab-canada-s.gif);}
+	.tabs-style-3 .tabs li.tab-checklist{background-image:url(../images/lct-tab-checklist-s.gif);}
+	.tabs-style-3 .tabs li.tab-citizenship{background-image:url(../images/lct-tab-citizenship-s.gif);}
+	.tabs-style-3 .tabs li.tab-connect{background-image:url(../images/lct-tab-connect-s.gif);}
+	.tabs-style-3 .tabs li.tab-family{background-image:url(../images/lct-tab-family-s.gif);}
+	.tabs-style-3 .tabs li.tab-health{background-image:url(../images/lct-tab-health-s.gif);}
+	.tabs-style-3 .tabs li.tab-housing{background-image:url(../images/lct-tab-housing-s.gif);}
+	.tabs-style-3 .tabs li.tab-id{background-image:url(../images/lct-tab-id-s.gif);}
+	.tabs-style-3 .tabs li.tab-language{background-image:url(../images/lct-tab-language-s.gif);}
+	.tabs-style-3 .tabs li.tab-profile{background-image:url(../images/lct-tab-profile-s.gif);}
+	.tabs-style-3 .tabs li.tab-refugee{background-image:url(../images/lct-tab-refugee-s.gif);}
+	.tabs-style-3 .tabs li.tab-services{background-image:url(../images/lct-tab-services-s.gif);}
+	.tabs-style-3 .tabs li.tab-work{background-image:url(../images/lct-tab-work-s.gif);}
+	.tabs-style-3 .tabs li.tab-education{background-image:url(../images/lct-tab-education-s.gif);}
+	.tabs-style-3 .tabs li.tab-money{background-image:url(../images/lct-tab-money-s.gif);}
+}
+@media screen and (max-width:767px),screen and (max-device-width:767px){
+	
+}
+@media screen and (max-width:600px),screen and (max-device-width:600px){
+
+}
+@media screen and (max-width:480px),screen and (max-device-width:480px){
+	
+}
+@media screen and (max-width:460px),screen and (max-device-width:460px){
+
+}
+@media screen and (max-width:360px),screen and (max-device-width:360px){
+	
+}
+@media screen and (max-width:320px),screen and (max-device-width:320px){
+
+}
+
+
+
+

@@ -1,0 +1,95 @@
+﻿
+body {
+       background-color: white;
+}
+
+section h3.top
+{
+    margin-top:0px;
+}
+
+input.btn-back
+{
+    border-style: none;
+    background: transparent url("../images/back.png") no-repeat scroll top left;
+    color: #FFFFFF;
+    -float: left;
+    font-size: 120%;
+    height: 37px;
+    padding: 0px 0 0 20px;
+    width: 129px;
+    text-decoration: none;
+}
+
+div.survey 
+{
+    display:block;
+    margin:0px;
+    padding-bottom:20px;
+    padding-left:10px;
+}
+
+div.tabs-panel div
+{
+    padding-top:10px;
+    padding-left:10px;
+}
+
+h4.nobr
+{
+    margin-bottom:0px;
+}
+
+ul.qwul 
+{
+    padding:0px;
+    margin:0px;
+    margin-left:30px;
+}
+
+ul.qwul li.qwli
+{
+    padding:2px 0 2px 0;
+    margin:0px;
+}
+
+
+
+div.contentBox {
+      display: block;      
+      border: 0px solid #89A;       
+      padding: 0px;      
+      margin: 0px;      
+      margin-left:0px; 
+      margin-top:0px; 
+      width:610px;
+      font-family:Verdana, Arial, Helvetica, sans-serif;
+	  color :#18336a;
+      background-color: white;
+}
+
+
+.spacer {
+	clear:both;
+}
+
+/** Start Error Message **/
+
+div.errorMessage
+{
+	color: Red;
+}
+
+/** End Error Message **/
+
+/** MAP Support start **/
+*:first-child+html .goAwayIE {display:none;visibility:hidden;} 
+* html .goAwayIE {display:none;visibility:hidden;}
+/** MAP Support end **/
+
+
+
+
+
+
+
