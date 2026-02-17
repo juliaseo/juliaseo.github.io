@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokémon Type Distribution</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      :root {
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      }
+
+      body {
+        margin: 0;
+        padding: 2rem;
+        background: #f8fafc;
+        color: #0f172a;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 1.5rem;
+      }
+
+      h1 {
+        margin: 0 0 0.5rem;
+        font-size: 1.5rem;
+      }
+
+      p {
+        margin: 0 0 1.25rem;
+      }
+
+      #status {
+        margin-bottom: 0.75rem;
+        font-size: 0.95rem;
+      }
+
+      canvas {
+        max-height: 480px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Pokémon Type Distribution</h1>
+      <p>Bar chart of Pokémon counts by type from the public PokéAPI.</p>
+      <div id="status">Loading type data…</div>
+      <canvas id="typeChart" aria-label="Pokémon type bar chart" role="img"></canvas>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
